@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,162,76,0.10), transparent 60%),
+    linear-gradient(180deg, #3A0C13 0%, #2A090F 55%, #200609 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Data overlay styling */
+.letter-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  pointer-events: none; /* Let clicks pass through to the 3D canvas */
+}
+
+.letter-data h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #c78d5e; /* Elegant gold-ish color */
+}
+
+.letter-data p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Landing Overlay Styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(28, 28, 28, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.overlay-content {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  border: 1px solid rgba(199, 141, 94, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 80%;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.overlay-subtitle {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a9a9a9;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-title {
+  font-size: 4rem;
+  font-family: 'Playfair Display', serif; /* Or a beautiful cursive font if added */
+  color: #c78d5e;
+  margin: 1rem 0;
+  font-weight: normal;
+}
+
+.overlay-title .ampersand {
+  font-size: 3rem;
+  color: #a9a9a9;
+  font-style: italic;
+  margin: 0 10px;
+}
+
+.overlay-text {
+  font-size: 1.1rem;
+  color: #d3d3d3;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.overlay-button {
+  background-color: transparent;
+  color: #c78d5e;
+  border: 2px solid #c78d5e;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.overlay-button:hover {
+  background-color: #c78d5e;
+  color: #1c1c1c;
+  box-shadow: 0 0 15px rgba(199, 141, 94, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay-title {
+    font-size: 2.5rem;
+  }
+  .overlay-title .ampersand {
+    font-size: 2rem;
+  }
+  .overlay-subtitle {
+    font-size: 1rem;
+  }
+  .overlay-content {
+    padding: 1.5rem;
+  }
+}
