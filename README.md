@@ -1,16 +1,35 @@
-# React + Vite
+# Vinny Weds Phani — Interactive 3D Wedding Invitation
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An interactive 3D wedding invitation website built with React 19, Vite and Three.js. Instead of a static card, the invitation is a small 3D scene: an envelope that opens to reveal the letter, framed by a traditional toranam (door hanging), with overlay UI for the invitation details.
 
-Currently, two official plugins are available:
+## Components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `Envelope.jsx` / `Letter.jsx` — the 3D envelope and the invitation letter it reveals
+- `Scene.jsx` — the Three.js scene setup (canvas, lighting, camera)
+- `Toranam.jsx` — decorative toranam framing the scene
+- `Band.jsx` / `Overlay.jsx` — supporting 3D band and the HTML overlay UI
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + Vite
+- Three.js with @react-three/fiber and @react-three/drei
+- @react-spring/three for animation
 
-## Expanding the Oxlint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Notes
+
+- The `dist/` folder in this repo is a committed build output — it can be regenerated any time with `npm run build`.
+- Screenshots / preview GIF: _(to be added)_
